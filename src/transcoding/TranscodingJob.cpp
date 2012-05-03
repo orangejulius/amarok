@@ -84,7 +84,7 @@ Job::init()
 
     //debug spam follows
     debug() << format->ffmpegParameters( m_configuration );
-    debug() << QString( "FFMPEG call is " ) << m_transcoder->program();
+    debug() << QString( "FFMPEG call is " ) << m_transcoder->program().join(" ");
 
     connect( m_transcoder, SIGNAL( readyRead() ),
              this, SLOT( processOutput() ) );
@@ -97,7 +97,7 @@ Job::start()
 {
     DEBUG_BLOCK
     debug()<< "starting ffmpeg";
-    debug()<< "call is " << m_transcoder->program();
+    debug()<< "call is " << m_transcoder->program().join(" ");
     m_transcoder->start();
     debug() << m_transcoder->readAllStandardOutput();
     debug()<< "ffmpeg started";
