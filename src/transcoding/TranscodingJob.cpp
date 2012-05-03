@@ -83,7 +83,6 @@ Job::init()
                   << m_dest.path();
 
     //debug spam follows
-    debug() << "foo";
     debug() << format->ffmpegParameters( m_configuration );
     debug() << QString( "FFMPEG call is " ) << m_transcoder->program();
 
