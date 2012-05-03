@@ -78,8 +78,6 @@ Job::init()
     //... and finally, outfile configuration followed by the outfile path.
     const Transcoding::Format *format = Amarok::Components::transcodingController()->format( m_configuration.encoder() );
     *m_transcoder << format->ffmpegParameters( m_configuration )
-                  << QString( "-map_meta_data" )
-                  << QString( m_dest.path() + ":" + m_src.path() )
                   << m_dest.path();
 
     //debug spam follows
